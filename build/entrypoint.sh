@@ -2,7 +2,7 @@
 
 # Generate MOTD if container is new
 if test -f /root/new; then
-	/root/motd.sh
+	/root/mootd.sh
 	rm /root/new
 fi
 
