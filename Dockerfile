@@ -15,7 +15,7 @@ RUN chmod -R 750 /srv/www
 
 # Bash file / dcron configuration
 COPY ./motd.sh /root/motd.sh
-RUN echo -e '0 * * * * /root/motd.sh\n' | crontab -u root -
+RUN echo -e '0 0 * * * /root/motd.sh\n' | crontab -u root -
 
 # Expose HTTP port
 expose 80
