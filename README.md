@@ -1,5 +1,7 @@
 # mootd
 
+![](https://img.shields.io/badge/status-maintained-green)
+
 mootd is a small Alpine/Nginx container that serves an RNG-based MOTD using Cowsay and Fortune.
 
 Cows have a 10% chance of being non-default, after which they are equally randomised. Fortune messages are always equally randomised.
