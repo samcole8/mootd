@@ -14,6 +14,6 @@ To build the container image, `cd` to the mootd directory and run:
 
 To build and run the container, use:
 
-`docker run --name mootd -p 80:80 -d cowfort`
+`docker run --name mootd -p 80:80 -d mootd`
 
 *Note: This assumes you want to expose the container to other devices on your network. If you just want access on your machine, omit the `-p 80:80` flag.*
