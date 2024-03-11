@@ -1,7 +1,11 @@
 #!/bin/sh
 
-# Select cow with 10% chance of being atypical
-cow=$((0 + $RANDOM % 10))
+# Chance denominator for cow being atypical (not a cow)
+# e.g., if CHANCE=100 then 1/100 chance of atypical cow
+chance=10
+
+# RNG for cow chance
+cow=$((1 + $RANDOM % $chance))
 if [ $cow != 1 ]; then
 	# Use default cow
 	motd=$(fortune | cowsay)
