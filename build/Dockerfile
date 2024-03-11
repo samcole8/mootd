@@ -2,16 +2,16 @@
 FROM alpine:latest
 
 # Install packages
-RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-RUN apk update
-RUN apk add --no-cache cowsay@testing fortune nginx dcron
+RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+    apk update && \
+    apk add --no-cache cowsay@testing fortune nginx dcron
 
 # Nginx configuration
 COPY ./nginx.conf /etc/nginx/http.d/default.conf
-RUN mkdir /srv/www
-RUN touch /srv/www/index.html
-RUN chown -R :nginx /srv/www
-RUN chmod -R 750 /srv/www
+RUN mkdir /srv/www && \
+    touch /srv/www/index.html && \
+    chown -R :nginx /srv/www && \
+    chmod -R 750 /srv/www
 
 # Bash file / dcron configuration
 COPY ./mootd.sh /root/mootd.sh
