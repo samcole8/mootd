@@ -15,6 +15,7 @@ RUN mkdir /srv/www && \
 
 # Bash file / dcron configuration
 COPY ./mootd.sh /root/mootd.sh
+# Modify cron string to change interval
 RUN echo -e '0 0 * * * /root/mootd.sh\n' | crontab -u root -
 
 # Expose HTTP port
