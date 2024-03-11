@@ -24,7 +24,7 @@ For example:
 
 - The MOTD updates at a fixed interval
 - Messages are always random
-- Cows have a fixed chance to be atypical - if so a unique "cow" is selected at random (see below)
+- Cows have a fixed chance to be atypical—if so a unique "cow" is selected at random (see below)
 - There are around 50 different cows packaged with cowsay
 
 ```
@@ -50,7 +50,7 @@ Change the chance for an atypical cow by modifying the *chance* variable in *moo
 
 `chance=10`
 
-This number is a reciprocal of the probability - so to achieve a 1 in 100 probability you would change *chance* to 100.
+This number is a reciprocal of the probability—so to achieve a 1 in 100 probability you would change *chance* to 100.
 
 ## Usage
 
