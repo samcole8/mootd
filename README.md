@@ -1,6 +1,6 @@
 # mootd
 
-![](https://img.shields.io/badge/status-maintained-green)
+![](https://img.shields.io/badge/status-maintained-green)[![](https://img.shields.io/badge/release-v1.0.0_"Bongo"-blue)](https://github.com/samcole8/mootd/releases/latest)
 
 mootd is a simple Alpine/Nginx container that serves an RNG MOTD using Cowsay and Fortune.
 
