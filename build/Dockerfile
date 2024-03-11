@@ -18,7 +18,7 @@ COPY ./mootd.sh /root/mootd.sh
 RUN echo -e '0 0 * * * /root/mootd.sh\n' | crontab -u root -
 
 # Expose HTTP port
-expose 80
+EXPOSE 80
 
 # Entrypoint configuration
 RUN touch /root/new
