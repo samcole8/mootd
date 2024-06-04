@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Chance denominator for cow being atypical (not a cow)
+# Chance reciprocal for cow being non-standard
 # e.g., if CHANCE=100 then 1/100 chance of atypical cow
 chance=10
 
