@@ -7,8 +7,8 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
     apk add --no-cache cowsay@testing fortune dcron
 
 # Copy binaries
-COPY ./bin/api ./bin/renew /root/bin/
-RUN chmod +x /root/bin/*
+COPY ./bin/api /usr/local/api
+RUN chmod +x /usr/local/api
 
 # Append Cron job
 RUN echo -e '0 0 * * * /root/mootd.sh\n' | crontab -u root -
