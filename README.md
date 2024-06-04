@@ -6,7 +6,7 @@ mootd is a simple Alpine/Nginx container that serves an RNG MOTD using Cowsay an
 
 For example:
 
-```
+```bash
  ________________________________________ 
 / All the existing 2.0.x kernels are too \
 | buggy for 2.1.x to be the main goal.   |
@@ -27,7 +27,7 @@ For example:
 - Cows have a fixed chance to be atypical—if so a unique "cow" is selected at random (see below)
 - There are around 50 different cows packaged with cowsay
 
-```
+```bash
           \_______
  v__v    \   O   )
  (oo)     ||----w |
