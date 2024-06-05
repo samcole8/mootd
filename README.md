@@ -58,7 +58,7 @@ The image requires a compiled version of api.go. Assuming you have go installed,
 *Note: CGO_ENABLED=0 is used to disable C dependencies. Without this, the service will not run.* 
 
 ```bash
-CGO_ENABLED=0 go -o /path/to/mootd/mootd/bin build api.go 
+CGO_ENABLED=0 go build -o /path/to/mootd/mootd/bin api.go 
 ```
 
 To build the container image, `cd` to the mootd directory and run:
