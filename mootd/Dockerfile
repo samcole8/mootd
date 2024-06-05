@@ -9,8 +9,8 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
     apk update && \
     apk add --no-cache cowsay@testing fortune dcron && \
     chmod +x /usr/local/bin/api /usr/local/bin/renew.sh && \
-    echo -e '0 0 * * * /usr/local/bin/renew.sh\n' | crontab -u root -\
-    touch /srv/first_start
+    echo -e '0 0 * * * /usr/local/bin/renew.sh\n' | crontab -u root - && \
+    touch /srv/first_run
 
 # Expose HTTP port
 EXPOSE 80
