@@ -1,5 +1,5 @@
 # Use Alpine Linux as the base image
-FROM alpine:30.20.0
+FROM alpine:3.20.0
 
 # Copy binaries
 COPY ./bin/api ./bin/renew.sh /usr/local/bin/
@@ -9,7 +9,8 @@ RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/ap
     apk update && \
     apk add --no-cache cowsay@testing fortune dcron && \
     chmod +x /usr/local/bin/api /usr/local/bin/renew.sh && \
-    echo -e '0 0 * * * /usr/local/bin/renew.sh\n' | crontab -u root -
+    echo -e '0 0 * * * /usr/local/bin/renew.sh\n' | crontab -u root -\
+    touch /srv/first_start
 
 # Expose HTTP port
 EXPOSE 80
