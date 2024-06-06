@@ -42,7 +42,7 @@ You can modify the update interval of the MOTD by editing the cron string on lin
 RUN echo -e '0 0 * * * /root/mootd.sh\n' | crontab -u root -
 ```
 
-In the example above, you could change `0 0 * * *` to `0 0 * * 1` to update the MOTD weekly. If you aren't sure, use a [cron expression generator](https://crontab.guru/)
+In the example above, you could change `0 0 * * *` to `0 0 * * 1` to update the MOTD weekly. If you aren't sure, use a [cron expression generator](https://crontab.guru/).
 
 ### Cow chance
 
