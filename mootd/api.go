@@ -14,7 +14,7 @@ func check() {
 	}
 }
 
-func get(w http.ResponseWriter, r *http.Request) {
+func get(w http.ResponseWriter, _ *http.Request) {
 	content, _ := os.ReadFile("/srv/mootd")
 	io.WriteString(w, string(content))
 }
