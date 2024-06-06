@@ -26,10 +26,10 @@ mootd is a lightweight container that serves an RNG message-of-the-day (MOTD) us
 - There are around 50 different cows packaged with cowsay
 
 ```bash
-          \_______
- v__v    \   O   )
+         O\_______
+ v__v    \        )\/\
  (oo)     ||----w |
- (__)     ||     ||  \/\
+ (__)     ||     ||  
 ```
 
 ## Configuration
