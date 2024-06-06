@@ -58,7 +58,7 @@ This number is a reciprocal of the probability—so to achieve a 1 in 100 probab
 
 The Dockerfile requires a compiled version of `api.go` in the `bin/` directory. Assuming you have Go installed, you can create it by running the build.sh script:
 
-```
+```bash
 chmod +x build.sh
 ./build.sh
 ```
