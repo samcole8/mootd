@@ -46,7 +46,7 @@ In the example above, you could change `0 0 * * *` to `0 0 * * 1` to update the 
 
 ### Cow chance
 
-Change the chance for an atypical cow by modifying the `chance` variable in *renew.sh*. The default is 1 in 10.
+Change the chance for an atypical cow by modifying the `chance` variable in `renew.sh`. The default is 1 in 10.
 
 This number is a reciprocal of the probability—so to achieve a 1 in 100 probability you would change `chance` to 100.
 
