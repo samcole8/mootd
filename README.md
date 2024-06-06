@@ -36,7 +36,7 @@ mootd is a lightweight container that serves an RNG message-of-the-day (MOTD) us
 
 ### Update Interval
 
-You can modify the update interval of the MOTD by editing the cron string in line 12 of the Dockerfile.
+You can modify the update interval of the MOTD by editing the cron string on line 20 of the Dockerfile.
 
 ```Dockerfile
 RUN echo -e '0 0 * * * /root/mootd.sh\n' | crontab -u root -
