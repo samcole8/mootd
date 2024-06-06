@@ -1,10 +1,8 @@
 # mootd
 
-![](https://img.shields.io/badge/status-maintained-green)[![](https://img.shields.io/badge/release-v1.1.0_"Porpoise"-blue)](https://github.com/samcole8/mootd/releases/latest)
+![](https://img.shields.io/badge/status-maintained-green) [![](https://img.shields.io/badge/release-v1.1.0_"Porpoise"-blue)](https://github.com/samcole8/mootd/releases/latest)
 
-mootd is a lightweight container that serves an RNG MOTD using Cowsay and Fortune.
-
-For example:
+mootd is a lightweight container that serves an RNG message-of-the-day (MOTD) using Cowsay and Fortune.
 
 ```bash
  ________________________________________ 
@@ -20,7 +18,7 @@ For example:
                 ||     ||
 ```
 
-## Features
+## How it works
 
 - The MOTD updates at a fixed interval
 - Messages are always random
@@ -52,15 +50,15 @@ Change the chance for an atypical cow by modifying the `chance` variable in *ren
 
 This number is a reciprocal of the probability—so to achieve a 1 in 100 probability you would change `chance` to 100.
 
-## Usage
+## Deployment
 
-The image requires a compiled version of api.go. Assuming you have go installed, you can do this with the command below.  
-*Note: `CGO_ENABLED=0` is used to disable C dependencies. Without this, the service will not run.* 
+The Dockerfile requires a compiled version of `api.go` in the `bin/` directory. Assuming you have Go installed, you can create it with the command below:  
 
 ```bash
 CGO_ENABLED=0 go build -o /path/to/mootd/mootd/bin api.go 
 ```
-
+*Note: `CGO_ENABLED=0` is used to disable C dependencies. Without this, the service will not run.*  
+  
 To build the container image, `cd` to the mootd directory and run:
 
 ```bash
