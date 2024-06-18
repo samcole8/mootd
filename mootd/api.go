@@ -8,9 +8,8 @@ import (
 )
 
 func check() {
-	if _, err := os.Stat("/srv/first_run"); err == nil {
+	if _, err := os.Stat("/srv/mootd"); os.IsNotExist(err) {
 		exec.Command("/bin/sh", "/usr/local/bin/renew.sh").Run()
-		os.Remove("/srv/first_run")
 	}
 }
 

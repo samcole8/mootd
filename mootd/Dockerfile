@@ -11,8 +11,6 @@ RUN \
     apk update && \
     # Install dependencies
     apk add --no-cache cowsay@testing fortune dcron go && \
-    # Add mootd output files
-    touch /srv/first_run /srv/mootd && \
     # Create restricted user
     addgroup api && \
     adduser -s /bin/nologin -D -G api api && \
