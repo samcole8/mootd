@@ -1,6 +1,6 @@
 # mootd
 
-![](https://img.shields.io/badge/status-maintained-green) [![](https://img.shields.io/badge/release-v1.1.0_"Porpoise"-blue)](https://github.com/samcole8/mootd/releases/latest)
+![](https://img.shields.io/badge/status-maintained-green) [![](https://img.shields.io/badge/release-v1.2.0:guenon-blue)](https://github.com/samcole8/mootd/releases/latest)
 
 mootd is a lightweight container that serves an RNG message-of-the-day (MOTD) using Cowsay and Fortune.
 
