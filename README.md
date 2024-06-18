@@ -54,24 +54,6 @@ This number is a reciprocal of the probability—so to achieve a 1 in 100 probab
 
 ### Build the image
 
-#### Script
-
-The Dockerfile requires a compiled version of `api.go` in the `bin/` directory. Assuming you have Go installed, you can create it by running the build.sh script:
-
-```bash
-chmod +x build.sh
-./build.sh
-```
-
-#### Manual
-
-Alternatively, you can compile the binary manually.
-
-```bash
-CGO_ENABLED=0 go build -o /path/to/mootd/mootd/bin api.go 
-```
-*Note: `CGO_ENABLED=0` is used to disable C dependencies. Without this, the service will not run.*  
-  
 To build the container image, `cd` to the mootd directory and run:
 
 ```bash
