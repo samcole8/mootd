@@ -2,21 +2,30 @@
 FROM alpine:3.20.0
 
 # Copy binaries
-COPY ./bin/api ./bin/renew.sh /usr/local/bin/
+COPY ./api.go ./renew.sh /usr/local/bin/
 
 # Make configurations
-RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+RUN \
+    # Enable testing repo
+    echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk update && \
-    apk add --no-cache cowsay@testing fortune dcron && \
-    chmod +x /usr/local/bin/api /usr/local/bin/renew.sh && \
+    # Install dependencies
+    apk add --no-cache cowsay@testing fortune dcron go && \
+    # Add mootd output files
     touch /srv/first_run /srv/mootd && \
     # Create restricted user
     addgroup api && \
     adduser -s /bin/nologin -D -G api api && \
+    # Compile binary
+    CGO_ENABLED=0 go build -o /usr/local/bin/api /usr/local/bin/api.go && \
+    rm /usr/local/bin/api.go && \
+    apk del go && \
+    # Set permissions
     chown -R root:api /srv && \
     chmod -R 770 /srv && \
     chown root:api /usr/local/bin/api /usr/local/bin/renew.sh && \
     chmod 550 /usr/local/bin/api /usr/local/bin/renew.sh && \
+    # Add crontab
     echo -e '0 0 * * * /usr/local/bin/renew.sh\n' | crontab -u api -
 
 # Expose HTTP port
