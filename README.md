@@ -18,7 +18,7 @@ mootd is a lightweight container that serves an RNG message-of-the-day (MOTD) us
                 ||     ||
 ```
 
-## How it works
+## Features
 
 - The MOTD updates at a fixed interval
 - Messages are always random
