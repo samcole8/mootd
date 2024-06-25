@@ -52,7 +52,9 @@ This integer is the probability's reciprocal; for example, to achieve a 1 in 100
 
 ## Deployment
 
-### Build the image
+### Docker
+
+#### Build the image
 
 To build the container image, `cd` to the `./mootd` directory and run:
 
@@ -60,7 +62,7 @@ To build the container image, `cd` to the `./mootd` directory and run:
 docker build -t mootd .
 ```
 
-### Run the container
+#### Run the container
 
 To run the container, use the following command.
 
@@ -69,3 +71,18 @@ docker run --name mootd -p 80:80 -d mootd
 ```
 
 *Note: This assumes you want to expose the container to other devices on your network. If you just want access on your machine, omit the `-p 80:80` flag.*
+
+### Docker Compose
+
+If you'd prefer to use Docker compose, the following script will achieve the same result:
+
+```yml
+services:
+  mootd:
+    build:
+      context: "./mootd"
+    ports:
+      - 80:80
+```
+
+*Note: This assumes you want to expose the container to other devices on your network. If you just want access on your machine, omit the `ports` section.*
