@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/status-maintained-green) [![](https://img.shields.io/github/v/release/samcole8/mootd)](https://github.com/samcole8/mootd/releases/latest)
 
-mootd is a tiny MOTD server that generates randomised daily messages using Cowsay and Fortune. All it requires is a Linux host with Docker installed.
+MOOTD is a tiny MOTD server that generates randomised daily messages using Cowsay and Fortune. All it requires is a host with Docker installed.
 
 ```
  ________________________________________ 
@@ -18,7 +18,7 @@ mootd is a tiny MOTD server that generates randomised daily messages using Cowsa
                 ||     ||
 ```
 
-## Installation
+## Server Installation
 
 If you haven't already, [install Docker](https://docs.docker.com/engine/install/). Then, use `docker compose` to build and run the container:
 
@@ -26,12 +26,31 @@ If you haven't already, [install Docker](https://docs.docker.com/engine/install/
 docker compose up -d
 ```
 
-## Configuration
+## Server Configuration
 
 Define environment variables in the compose file (or run command) to override the defaults.
 
-| Env | Default | Example | Description |
-|---|---|---|---|
-| `TZ` | `UTC` | `London/Europe` | Timezone used by the server. |
-| `RENEWAL_TIME` | `24:00:00` | `12:30:00` | MOTD renewal time (HH:MM:SS). |
-| `CHANCE` | `10` | `100` | Reciprocal chance for atypical cow. The example used gives a 1 in 100 chance of a random non-standard cow; the default is 1 in 10. |
+| Env            | Default    | Example         | Description                                                                                                                        |
+| -------------- | ---------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `TZ`           | `UTC`      | `London/Europe` | Timezone used by the server.                                                                                                       |
+| `RENEWAL_TIME` | `24:00:00` | `12:30:00`      | MOTD renewal time (HH:MM:SS).                                                                                                      |
+| `CHANCE`       | `10`       | `100`           | Reciprocal chance for atypical cow. The example used gives a 1 in 100 chance of a random non-standard cow; the default is 1 in 10. |
+
+## Client
+
+The MOOTD "client" is a very simple bash script that you can execute in your `.bashrc` (or equivalent). It stores the current MOTD in a local file (`~/.mootd` by default), and updates it once it's expired.
+
+You can modify several variables in the bash script to control how the client works. Most importantly, the `RENEWAL_TIME` variable must match the value for the server.
+
+
+| Env            | Default                    | Example                   | Description                                    |
+| -------------- | -------------------------- | ------------------------- | ---------------------------------------------- |
+| `RENEWAL_TIME` | `24:00:00`                 | `12:30:00`                | MOTD renewal time (HH:MM:SS) for the server.   |
+| `MOOTD_PATH`   | `~/.mootd`                 | `/srv/mootd`              | Location to save MOOTD. Must be read/writable. |
+| `MOOTD_URL`    | `https://mootd.samcole.me` | `https://mysite.com:8080` | Server URL                                     |
+
+To install the client, simply add `mootd-client/mootd.sh` to your `.bashrc` or equivalent:
+
+```
+echo 'source mootd-client/mootd.sh' >> ~/.bashrc
+```
